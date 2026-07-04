@@ -9,6 +9,7 @@ from app.api.products import router as product_router
 from app.api.inventory import router as inventory_router
 from app.api.billing import router as billing_router
 from app.api.customer import router as customer_router
+from app.api.dashboard import router as dashboard_router
 app = FastAPI(title="ShopPilot AI API")
 Base.metadata.create_all(bind=engine)
 app.include_router(user_router)
@@ -16,7 +17,7 @@ app.include_router(product_router)
 app.include_router(inventory_router)
 app.include_router(billing_router)
 app.include_router(customer_router)
-
+app.include_router(dashboard_router)
 @app.get("/")
 def home():
     return {

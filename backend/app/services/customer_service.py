@@ -26,3 +26,62 @@ def create_customer(db: Session, customer: CustomerCreate):
 
 def get_customers(db: Session):
     return db.query(Customer).all()
+def add_credit(db: Session, customer_id: int, amount: float):
+    customer = db.query(Customer).filter(Customer.id == customer_id).first()
+
+    if not customer:
+        return {"error": "Customer not found"}
+
+    customer.balance += amount
+
+    db.commit()
+    db.refresh(customer)
+
+    return customer
+
+
+def pay_credit(db: Session, customer_id: int, amount: float):
+    customer = db.query(Customer).filter(Customer.id == customer_id).first()
+
+    if not customer:
+        return {"error": "Customer not found"}
+
+    if customer.balance < amount:
+        return {"error": "Payment exceeds balance"}
+
+    customer.balance -= amount
+
+    db.commit()
+    db.refresh(customer)
+
+    return customer
+
+def add_credit(db: Session, customer_id: int, amount: float):
+    customer = db.query(Customer).filter(Customer.id == customer_id).first()
+
+    if not customer:
+        return {"error": "Customer not found"}
+
+    customer.balance += amount
+
+    db.commit()
+    db.refresh(customer)
+
+    return customer
+
+
+def pay_credit(db: Session, customer_id: int, amount: float):
+    customer = db.query(Customer).filter(Customer.id == customer_id).first()
+
+    if not customer:
+        return {"error": "Customer not found"}
+
+    if customer.balance < amount:
+        return {"error": "Payment exceeds balance"}
+
+    customer.balance -= amount
+
+    db.commit()
+    db.refresh(customer)
+
+    return customer

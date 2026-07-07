@@ -18,15 +18,15 @@ function Sidebar() {
         </li>
 
         <li className="hover:text-blue-400">
+          <Link to="/customers">👥 Customers</Link>
+        </li>
+
+        <li className="hover:text-blue-400">
           <Link to="/inventory">📈 Inventory</Link>
         </li>
 
         <li className="hover:text-blue-400">
           <Link to="/billing">🧾 Billing</Link>
-        </li>
-
-        <li className="hover:text-blue-400">
-          <Link to="/customers">👥 Customers</Link>
         </li>
 
         <li className="hover:text-blue-400">

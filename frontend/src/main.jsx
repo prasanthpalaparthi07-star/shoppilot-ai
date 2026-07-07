@@ -10,6 +10,7 @@ import "./index.css";
 import App from "./App";
 import Dashboard from "./pages/Dashboard";
 import Products from "./pages/Products";
+import Customers from "./pages/Customers";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "products",
         element: <Products />,
+      },
+      {
+        path: "customers",
+        element: <Customers />,
       },
     ],
   },
